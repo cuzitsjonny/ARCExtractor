@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ARCExtractor
 {
-    public class ArcFile
+    public class ArchiveFile
     {
         public class ArcEntry
         {
@@ -34,7 +34,7 @@ namespace ARCExtractor
         private Stream fileStream;
         private BinaryReader fileReader;
 
-        public ArcFile(string filePath)
+        public ArchiveFile(string filePath)
         {
             this.filePath = filePath;
             this.IsValid = false;

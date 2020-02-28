@@ -14,7 +14,7 @@ ARCExtractor.exe "C:\Program Files (x86)\Steam\steamapps\common\Loadout\Data\01D
 Result:
 ```
 C:\
-└── Extracted
+└── Extracted\
         ├── 0x1abd63ca
         ├── 0x1c2e041
         ├── 0x1c236c91
@@ -30,13 +30,13 @@ ARCExtractor.exe "C:\Program Files (x86)\Steam\steamapps\common\Loadout\Data\ind
 Result:
 ```
 C:\
-└── Extracted
-        ├── 01DBC177.ARC
+└── Extracted\
+        ├── 01DBC177.ARC\
         │       ├── 0x1abd63ca
         │       ├── 0x1c2e041
         │       ├── 0x1c236c91
         │       └── ...
-        ├── 4ED964ED.ARC
+        ├── 4ED964ED.ARC\
         │       └── ...
         └── ...
 ```

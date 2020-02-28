@@ -47,32 +47,32 @@ namespace ARCExtractor
         {
             if (File.Exists(archiveFilePath))
             {
-                ArcFile arcFile = new ArcFile(archiveFilePath);
+                ArchiveFile archiveFile = new ArchiveFile(archiveFilePath);
 
-                arcFile.Open();
-                arcFile.Check();
+                archiveFile.Open();
+                archiveFile.Check();
 
-                if (arcFile.IsValid)
+                if (archiveFile.IsValid)
                 {
-                    arcFile.Read();
+                    archiveFile.Read();
 
                     Directory.CreateDirectory(destinationDirectoryPath);
 
-                    Console.WriteLine(" Found " + arcFile.ArcEntries.Length + " archive entries");
+                    Console.WriteLine(" Found " + archiveFile.ArcEntries.Length + " archive entries");
 
-                    for (int i = 0; i < arcFile.ArcEntries.Length; i++)
+                    for (int i = 0; i < archiveFile.ArcEntries.Length; i++)
                     {
-                        ArcFile.ArcEntry arcEntry = arcFile.ArcEntries[i];
+                        ArchiveFile.ArcEntry arcEntry = archiveFile.ArcEntries[i];
                         string arcEntryFilePath = Path.Combine(destinationDirectoryPath, arcEntry.TextIdentifier);
 
                         Console.WriteLine(" Extracting archive entry (" + arcEntryFilePath + ") [" +
-                            (i + 1) + "/" + arcFile.ArcEntries.Length + "]");
+                            (i + 1) + "/" + archiveFile.ArcEntries.Length + "]");
 
-                        arcFile.WriteEntryData(arcEntry, arcEntryFilePath);
+                        archiveFile.WriteEntryData(arcEntry, arcEntryFilePath);
                     }
                 }
 
-                arcFile.Close();
+                archiveFile.Close();
             }
             else
             {
